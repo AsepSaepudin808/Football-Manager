@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_football_club,access_football_club,model_football_club,,1,1,1,1
+access_football_match,access_football_match,model_football_match,,1,1,1,1
+access_football_league_standing,access_football_league_standing,model_football_league_standing,,1,1,1,1
+access_football_match_temp,access_football_match_temp,model_football_match_temp,,1,1,1,1
+access_football_match_wizard,access_football_match_wizard,model_football_match_wizard,,1,1,1,1

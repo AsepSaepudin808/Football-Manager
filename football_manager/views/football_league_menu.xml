@@ -1,0 +1,31 @@
+<!-- views/football_league_menu.xml -->
+<odoo>
+
+    <menuitem id="menu_football_league" name="Football League" sequence="10"/>
+
+    <menuitem id="menu_football_club" name="Clubs" parent="menu_football_league" action="action_football_club"/>
+    <menuitem id="menu_football_match" name="Matches" parent="menu_football_league" action="action_football_match"/>
+    <menuitem id="menu_football_match_wizard" name="Add Multiple Matches" parent="menu_football_league" action="action_football_match_wizard"/>
+    <menuitem id="menu_football_league_standing" name="Standings" parent="menu_football_league" action="action_football_league_standing"/>
+    
+
+    <record id="action_football_club" model="ir.actions.act_window">
+        <field name="name">Football Clubs</field>
+        <field name="res_model">football.club</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_football_match" model="ir.actions.act_window">
+        <field name="name">Football Matches</field>
+        <field name="res_model">football.match</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_football_league_standing" model="ir.actions.act_window">
+        <field name="name">Football League Standings</field>
+        <field name="res_model">football.league.standing</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+
+</odoo>

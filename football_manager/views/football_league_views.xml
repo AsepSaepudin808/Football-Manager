@@ -1,0 +1,112 @@
+<!-- views/football_league_views.xml -->
+<odoo>
+<record id="view_football_club_form" model="ir.ui.view">
+    <field name="name">football.club.form</field>
+    <field name="model">football.club</field>
+    <field name="arch" type="xml">
+        <form string="Football Club">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="city"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="view_football_club_tree" model="ir.ui.view">
+    <field name="name">football.club.tree</field>
+    <field name="model">football.club</field>
+    <field name="arch" type="xml">
+        <tree string="Football Clubs">
+            <field name="name"/>
+            <field name="city"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_football_match_form" model="ir.ui.view">
+    <field name="name">football.match.form</field>
+    <field name="model">football.match</field>
+    <field name="arch" type="xml">
+        <form string="Football Match">
+            <sheet>
+                <group>
+                    <field name="club1_id"/>
+                    <field name="score1"/>
+                    <field name="club2_id"/>
+                    <field name="score2"/>
+                    <field name="match_date"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="view_football_match_tree" model="ir.ui.view">
+    <field name="name">football.match.tree</field>
+    <field name="model">football.match</field>
+    <field name="arch" type="xml">
+        <tree string="Football Matches">
+            <field name="club1_id"/>
+            <field name="score1"/>
+            <field name="club2_id"/>
+            <field name="score2"/>
+            <field name="match_date"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_football_league_standing_tree" model="ir.ui.view">
+    <field name="name">football.league.standing.tree</field>
+    <field name="model">football.league.standing</field>
+    <field name="arch" type="xml">
+        <tree string="Football League Standings">
+            <field name="club_id"/>
+            <field name="played"/>
+            <field name="won"/>
+            <field name="draw"/>
+            <field name="lost"/>
+            <field name="goals_for"/>
+            <field name="goals_against"/>
+            <field name="points"/>
+        </tree>
+    </field>
+</record>
+
+<!-- Wizard View -->
+<record id="view_football_match_wizard_form" model="ir.ui.view">
+    <field name="name">football.match.wizard.form</field>
+    <field name="model">football.match.wizard</field>
+    <field name="arch" type="xml">
+        <form string="Add Multiple Matches">
+            <sheet>
+                <group>
+                    <field name="match_ids">
+                        <tree string="Matches">
+                            <field name="club1_id"/>
+                            <field name="score1"/>
+                            <field name="club2_id"/>
+                            <field name="score2"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button string="Save Matches" type="object" name="action_save_matches" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<!-- Wizard Action -->
+<record id="action_football_match_wizard" model="ir.actions.act_window">
+    <field name="name">Add Multiple Matches</field>
+    <field name="res_model">football.match.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+</odoo>
